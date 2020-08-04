@@ -1,23 +1,30 @@
-// Форматирование строки в зависимости от длинны строки
-// Напиши функцию formatString(string, maxLength = 40) которая принимает строку и форматирует ее если необходимо.
+// Суммирование значений свойств объекта
+// Напиши функцию countTotalSalary(employees) принимающую объект зарплат.Функция считает общую сумму зарплаты работников и возвращает ее.Каждое поле объекта, передаваемого в функцию, имеет вид "имя": "зарплата".
 
-// Если длина строки не превышает maxLength, функция возвращает ее в исходном виде.
-// Если длина больше maxLength, то функция обрезает строку до размера maxLength символов и добавляет в конец строки троеточие ..., после чего возвращает укороченную версию.
-
-
-function formatString(string, maxLength = 40) {
+const countTotalSalary = function (employees) {
+    'use strict';
     // Write code under this line
-    if (string.length > maxLength) {
-        string = string.slice(0, maxLength) + '...'
+    let totalSalary = 0;
+    const values = Object.values(employees);
+    for (const value of values) {
+        totalSalary += value;
     }
-return string
+    return totalSalary
+};
+
+// Объекты и ожидаемый результат
+const developers = {
+    mango: 300,
+    poly: 250,
+    alfred: 450,
+};
+console.log(countTotalSalary(developers));
+// 1000
+
+const supports = {
+    kiwi: 200,
+    lux: 150,
+    chelsy: 150,
 }
-
-// console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
-// 'Curabitur ligula sapien, tincidunt non.'
-
-console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-// 'Vestibulum facilisis, purus nec pulvinar...'
-
-//console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.', 30));
-// 'Vestibulum facilisis, purus ne...'
+console.log(countTotalSalary(supports));
+// 500
