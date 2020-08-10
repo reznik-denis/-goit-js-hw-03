@@ -119,7 +119,18 @@
 
 //Дана строка. Сделайте заглавным первый символ этой строки не используя цикл. Найдите два решения.
 
-const a = 'какая то строка, где нужно сделать первое слово заглавным'
+// const a = 'какая то строка, где нужно сделать первое слово заглавным'
 
-a.toUpperCase();
-console.log(a.toUpperCase())
+// a.toUpperCase();
+// console.log(a.toUpperCase())
+
+const printMessage = function (message) {
+    console.log(message);
+};
+
+const higherOrderFunction = function (callback) {
+    const string = 'HOCs are awesome';
+    callback(string);
+};
+
+higherOrderFunction(printMessage);
